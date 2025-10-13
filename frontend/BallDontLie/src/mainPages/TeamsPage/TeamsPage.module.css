@@ -1,0 +1,275 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;  
+  box-sizing: border-box;   
+}
+
+.body {
+  min-height: 100vh;    
+  width: 100%;             
+  background-color: #e9e9e9;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+
+.containers{
+    flex: 1;
+}
+
+.navbar {
+  display: flex;  
+  justify-content: space-between;     
+  align-items: center;                
+  padding: 20px 20px;
+  width: 100%;
+  background-color: rgb(255, 189, 118);
+  
+  position: relative;
+
+}
+
+.logoBtn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  font-weight: 1000;
+  color: black;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 3px;
+  width: 250px;
+  height: 50px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.logoBtn:hover{
+  transform: scale(105%); 
+}
+
+.WebLogo{
+  width: 80px;
+}
+
+.navButtons {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  font-weight: 1000;
+  color: black;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 3px;
+  width: 150px;
+  height: 40px;
+  transition: transform 0.3s ease, background-color 0.4s;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: rgb(255, 229, 189);
+  transform: scale(105%); 
+}
+
+.btnIcon{
+  width: 40px;
+}
+
+
+
+.nbaImage{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 125px;
+  height: 125px;
+  clip-path: inset( 3px 38px 1px 37px);
+  border-radius: 50%;
+  margin-bottom: 1px;
+
+}
+
+.conferences {
+  display: flex;
+  justify-content: center;
+  gap: 20px 150px;
+}
+
+.conference {
+  flex: 1;
+}
+
+.conferenceTitle {
+  margin-top: 40px;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.teamsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px;
+}
+
+.teamCard {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.teamCard:hover{
+  background-color: #ffa334d7;
+  transform: scale(1.1);
+}
+
+.teamCard img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.teamCard p {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.footer {
+  line-height: 1.5;
+  margin-top: 30px;
+  background-color: #262626;
+  color: white;
+  width: 100%;
+  height: 100px;
+  display: flex;      
+  justify-content: center; 
+  align-items: center;  
+  padding: 0 20px;         
+  box-sizing: border-box;
+}     
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5); /* затемнение всего остального */
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 100px; /* отступ сверху */
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+  align-self: stretch;
+}
+
+.searchBox {
+  background: white;
+  border-radius: 30px;
+  padding: 10px 25px;
+  width: 60%;
+  max-width: 500px;
+  animation: slideDown 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.searchBox input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+/* Анимации */
+.overlay.open {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5); /* затемнение всего остального */
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 100px; /* отступ сверху */
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.overlay.close {
+  animation: fadeout 0.2s ease;
+}
+
+.searchBox {
+  background: white;
+  border-radius: 30px;
+  padding: 10px 25px;
+  width: 60%;
+  max-width: 500px;
+  animation: slideDown 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.searchBox input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.overlay.close {
+  animation: fadeOut 0.2s ease forwards;
+}
+
+.searchBox.close {
+  animation: slideUp 0.2s ease forwards;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-30px); opacity: 0; }
+}
